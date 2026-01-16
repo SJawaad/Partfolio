@@ -1,0 +1,10 @@
+class PartfolioFacade {
+  registerAccount() {}
+  login() {}
+  searchComponents() {}
+  reserveComponent() {}
+  cancelReservation() {}
+  acquireComponent() {}
+}
+
+module.exports = PartfolioFacade;
