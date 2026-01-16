@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login - Partfolio</title>
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+  <h1>Partfolio</h1>
+
+  <h2>Login</h2>
+  <input id="loginEmail" placeholder="Email">
+  <input id="loginPassword" type="password" placeholder="Password">
+  <button onclick="requestToken()">Request Token</button>
+
+  <div id="tokenBox" style="display:none;">
+    <input id="loginToken" placeholder="Enter token from email">
+    <button onclick="submitToken()">Verify Token</button>
+  </div>
+
+  <p>No account? <a href="register.html">Register</a></p>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS partfolio;
+USE partfolio;
+
+CREATE TABLE IF NOT EXISTS users (
+  user_id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password_hash VARCHAR(255) NOT NULL,
+  role VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS authentication_tokens (
+  token_id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,
+  token_value VARCHAR(20) NOT NULL,
+  expiry_time DATETIME NOT NULL,
+  is_used BOOLEAN NOT NULL DEFAULT FALSE,
+  FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
