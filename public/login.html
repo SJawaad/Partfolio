@@ -1,24 +1,66 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Login - Partfolio</title>
-  <link rel="stylesheet" href="css/auth.css">
-</head>
-<body>
-  <h1>Partfolio</h1>
+  <head>
+    <title>Login - Partfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/auth.css" />
+  </head>
+  <body>
+    <div class="auth-wrap">
+      <div class="brand">
+        <h1>Partfolio</h1>
+        <p>Secure component access for prototyping teams</p>
+      </div>
 
-  <h2>Login</h2>
-  <input id="loginEmail" placeholder="Email">
-  <input id="loginPassword" type="password" placeholder="Password">
-  <button onclick="requestToken()">Request Token</button>
+      <div class="card">
+        <h2>Sign in</h2>
 
-  <div id="tokenBox" style="display:none;">
-    <input id="loginToken" placeholder="Enter token from email">
-    <button onclick="submitToken()">Verify Token</button>
-  </div>
+        <div id="notice" class="notice"></div>
 
-  <p>No account? <a href="register.html">Register</a></p>
+        <div class="form">
+          <div class="field">
+            <div class="label">Email</div>
+            <input
+              id="loginEmail"
+              placeholder="name@company.com"
+              autocomplete="email"
+            />
+          </div>
 
-  <script src="js/auth.js"></script>
-</body>
+          <div class="field">
+            <div class="label">Password</div>
+            <input
+              id="loginPassword"
+              type="password"
+              placeholder="••••••••"
+              autocomplete="current-password"
+            />
+          </div>
+
+          <button class="btn" onclick="requestToken()">Request token</button>
+
+          <div id="tokenBox">
+            <div class="field">
+              <div class="label">Authentication token</div>
+              <input
+                id="loginToken"
+                placeholder="6-digit code"
+                inputmode="numeric"
+              />
+            </div>
+            <button class="btn" onclick="submitToken()">Verify token</button>
+            <div class="small">
+              Token expires in 30 seconds. Check your Mailtrap inbox.
+            </div>
+          </div>
+
+          <div class="link">
+            No account? <a href="register.html">Create one</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+  </body>
 </html>

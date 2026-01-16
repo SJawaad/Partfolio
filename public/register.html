@@ -1,26 +1,60 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Register - Partfolio</title>
-  <link rel="stylesheet" href="css/auth.css">
-</head>
-<body>
-  <h1>Partfolio</h1>
+  <head>
+    <title>Register - Partfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/auth.css" />
+  </head>
+  <body>
+    <div class="auth-wrap">
+      <div class="brand">
+        <h1>Partfolio</h1>
+        <p>Create your account to reserve components</p>
+      </div>
 
-  <h2>Register</h2>
-  <input id="regEmail" placeholder="Email">
-  <input id="regPassword" type="password" placeholder="Password">
+      <div class="card">
+        <h2>Create account</h2>
 
-  <select id="role">
-    <option>Engineer</option>
-    <option>Supervisor</option>
-    <option>Manager</option>
-  </select>
+        <div id="notice" class="notice"></div>
 
-  <button onclick="register()">Register</button>
+        <div class="form">
+          <div class="field">
+            <div class="label">Email</div>
+            <input
+              id="regEmail"
+              placeholder="name@company.com"
+              autocomplete="email"
+            />
+          </div>
 
-  <p><a href="login.html">Back to login</a></p>
+          <div class="field">
+            <div class="label">Password</div>
+            <input
+              id="regPassword"
+              type="password"
+              placeholder="Create a strong password"
+              autocomplete="new-password"
+            />
+          </div>
 
-  <script src="js/auth.js"></script>
-</body>
+          <div class="field">
+            <div class="label">Role</div>
+            <select id="role">
+              <option>Engineer</option>
+              <option>Supervisor</option>
+              <option>Manager</option>
+            </select>
+          </div>
+
+          <button class="btn" onclick="register()">Create account</button>
+
+          <div class="link">
+            Already have an account? <a href="login.html">Sign in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+  </body>
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard - Partfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/auth.css"> <!-- reuse your nice styling -->
+</head>
+<body>
+  <div class="auth-wrap">
+    <div class="brand">
+      <h1>Partfolio</h1>
+      <p id="welcomeText">Dashboard</p>
+    </div>
+
+    <div class="card">
+      <h2>Quick actions</h2>
+
+      <div class="form">
+        <div class="notice show success" id="roleBox"></div>
+
+        <button class="btn" onclick="goTo('components.html')">Search Components</button>
+        <button class="btn" onclick="goTo('reservations.html')">My Reservations</button>
+        <button class="btn" onclick="goTo('reports.html')" id="reportsBtn">Monthly Reports</button>
+        <button class="btn" onclick="goTo('procurement.html')" id="procureBtn">Acquire Components</button>
+
+        <div class="link">
+          <a href="#" onclick="logout()">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
