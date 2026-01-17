@@ -1,35 +1,131 @@
-<!DOCTYPE html>
+<!-- 
+  DASHBOARD LAYOUT:
+  - Left sidebar = navigation between system pages
+  - Main area = dashboard cards and quick actions
+  - Role-based visibility is controlled in dashboard.js
+-->
+
+<!doctype html>
 <html>
-<head>
-  <title>Dashboard - Partfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="css/auth.css"> <!-- reuse your nice styling -->
-</head>
-<body>
-  <div class="auth-wrap">
-    <div class="brand">
-      <h1>Partfolio</h1>
-      <p id="welcomeText">Dashboard</p>
-    </div>
+  <head>
+    <title>Dashboard - Partfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <div class="auth-wrap" style="max-width: 1200px">
+      <div class="brand">
+        <h1>Partfolio</h1>
+        <p>Prototype component management</p>
+      </div>
 
-    <div class="card">
-      <h2>Quick actions</h2>
+      <div class="app">
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar">
+          <div class="sideTop">
+            <div class="sideBrand">
+              <div class="name">Navigation</div>
+              <div class="sub" id="userLine">User</div>
+            </div>
+            <div class="pill">
+              <span class="dot"></span><span id="roleText">Role</span>
+            </div>
+          </div>
 
-      <div class="form">
-        <div class="notice show success" id="roleBox"></div>
+          <!-- LEFT SIDEBAR: navigation + role badge -->
+          <nav class="nav">
+            <a class="active" onclick="goTo('dashboard.html')"
+              >Dashboard <span class="hint">Home</span></a
+            >
+            <a onclick="goTo('components.html')"
+              >Search & Reserve <span class="hint">Inventory</span></a
+            >
+            <a onclick="goTo('reservations.html')"
+              >My Reservations <span class="hint">Manage</span></a
+            >
+            <a id="reportsTab" onclick="goTo('reports.html')"
+              >Reports <span class="hint">Supervisor</span></a
+            >
+            <a id="procureTab" onclick="goTo('procurement.html')"
+              >Procurement <span class="hint">Manager</span></a
+            >
+            <a onclick="logout()">Logout <span class="hint">Exit</span></a>
+          </nav>
+        </aside>
 
-        <button class="btn" onclick="goTo('components.html')">Search Components</button>
-        <button class="btn" onclick="goTo('reservations.html')">My Reservations</button>
-        <button class="btn" onclick="goTo('reports.html')" id="reportsBtn">Monthly Reports</button>
-        <button class="btn" onclick="goTo('procurement.html')" id="procureBtn">Acquire Components</button>
+        <!-- MAIN CONTENT -->
+        <main class="main">
+          <div class="headerRow">
+            <div>
+              <h2>Dashboard</h2>
+              <div class="meta" id="welcomeText">Welcome</div>
+            </div>
+            <div class="actions">
+              <button class="smallBtn" onclick="goTo('components.html')">
+                Search
+              </button>
+              <button class="smallBtn" onclick="goTo('reservations.html')">
+                My Reservations
+              </button>
+            </div>
+          </div>
 
-        <div class="link">
-          <a href="#" onclick="logout()">Logout</a>
-        </div>
+          <div class="cards">
+            <button class="cardAction" onclick="goTo('components.html')">
+              <h3>Search & Reserve Components</h3>
+              <p>
+                Browse mechanical and electrical components, filter results, and
+                reserve available items directly from the list.
+              </p>
+              <span class="tag">Engineer</span>
+            </button>
+
+            <button class="cardAction" onclick="goTo('reservations.html')">
+              <h3>Manage Reserved Components</h3>
+              <p>
+                View your current reservations, cancel holds, and track
+                reservation expiry times.
+              </p>
+              <span class="tag">Engineer</span>
+            </button>
+
+            <button
+              class="cardAction"
+              id="reportsCard"
+              onclick="goTo('reports.html')"
+            >
+              <h3>Monthly Allocation Report</h3>
+              <p>View allocations for engineers under supervision.</p>
+              <span class="tag">Supervisor</span>
+            </button>
+
+            <button
+              class="cardAction"
+              id="procureCard"
+              onclick="goTo('procurement.html')"
+            >
+              <h3>Acquire Components</h3>
+              <p>Add new components and record vendor transactions.</p>
+              <span class="tag">Manager</span>
+            </button>
+
+            <button class="cardAction" onclick="goTo('activity.html')">
+              <h3>Activity Logs</h3>
+              <p>Review past searches and reservations (up to 3 months).</p>
+              <span class="tag">All roles</span>
+            </button>
+
+            <button class="cardAction" onclick="goTo('settings.html')">
+              <h3>Account</h3>
+              <p>Update your details and manage your session.</p>
+              <span class="tag">All roles</span>
+            </button>
+          </div>
+        </main>
       </div>
     </div>
-  </div>
 
-  <script src="js/dashboard.js"></script>
-</body>
+    <script src="js/dashboard.js"></script>
+  </body>
 </html>
