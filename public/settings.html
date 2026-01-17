@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Account - Partfolio</title>
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div class="auth-wrap" style="max-width:1200px;">
+    <div class="brand">
+      <h1>Partfolio</h1>
+      <p>Account settings</p>
+    </div>
+
+    <div class="app">
+      <!-- Reuse the same sidebar -->
+      <aside class="sidebar">
+        <div class="sideTop">
+          <div class="sideBrand">
+            <div class="name">Navigation</div>
+            <div class="sub" id="userLine">User</div>
+          </div>
+          <div class="pill"><span class="dot"></span><span id="roleText">Role</span></div>
+        </div>
+
+        <nav class="nav">
+          <a onclick="goTo('dashboard.html')">Dashboard</a>
+          <a onclick="goTo('components.html')">Search & Reserve</a>
+          <a onclick="goTo('reservations.html')">My Reservations</a>
+          <a id="reportsTab" onclick="goTo('reports.html')">Reports</a>
+          <a id="procureTab" onclick="goTo('procurement.html')">Procurement</a>
+          <a class="active" onclick="goTo('account.html')">Account</a>
+          <a onclick="logout()">Logout</a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <h2>Account</h2>
+        <p>This is a placeholder for account settings.</p>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
